@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.dashboard.DashboardFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/fr_dashboard_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Movimientos"
+            android:textSize="25sp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:data=""/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fr_dashboard_movimientos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/fr_dashboard_title"
+            app:data="${dashboardViewModel.accountMoves}"
+            tools:listitem="@layout/line_account_move"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <data>
+        <variable
+            name="dashboardViewModel"
+            type="dev.cnemo.personalaccounting.ui.dashboard.DashboardViewModel" />
+    </data>
+</layout>
