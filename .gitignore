@@ -12,7 +12,10 @@ local.properties
 gradlew
 settings.gradle
 gradle/
+build.gradle
 app/google-services.json
-app/build
 app/proguard-rules.pro
 app/build.gradle
+app/build
+app/libs
+app/src/androidTest
